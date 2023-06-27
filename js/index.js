@@ -2,9 +2,9 @@ const copyBtn = document.getElementById("copy-button");
 const copyMessage = document.getElementById("copy-message");
 
 // Function show message for n seconds
-function showMessage(numberOfSeconds){
+function showMessage(messageElement, numberOfSeconds){
 setTimeout((e) => {
-    copyMessage.classList.add("invisible");
+    messageElement.classList.add("invisible");
   }, numberOfSeconds*1000);
 }
 // Function copy to clipboard
@@ -16,5 +16,5 @@ function copyToClipboard() {
 copyBtn.addEventListener("click", (e) => {
   copyMessage.classList.remove("invisible");
   copyToClipboard();
-  showMessage(2)
+  showMessage(copyMessage,2)
 });
