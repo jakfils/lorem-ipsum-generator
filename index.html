@@ -9,19 +9,18 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet" />
 
-  <title>Document</title>
+  <title>Lorem Ipsum Generator</title>
   <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="description">Lorem Ipsum Generator</h1>
-    <p>Generate Lorem Ipsum placeholder text. Select the number of paragraphs,sentences or words and hit
+    <h1>Lorem Ipsum Generator</h1>
+    <p class="description">Generate Lorem Ipsum placeholder text. Select the number of paragraphs, sentences or words and hit
       generate!</p>
-    <form action="">
-      <label for="number">Number</label>
+    <form action="" name="formed">
       <input type="number" id="number" min="1" value="1" name="number">
       <select name="choices" id="choices">
         <option value="paragraphs" selected>Paragraphs</option>
@@ -30,13 +29,16 @@
       </select>
       <input type="button" id="button" value="Generate">
     </form>
-    <p class="generated-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illum eveniet repellat, at necessitatibus, unde, totam quisquam non repudiandae quas distinctio. Sit architecto tenetur placeat! Commodi ad velit eaque. Maxime?
-      Perspiciatis fuga culpa, nemo doloribus sit sint necessitatibus ab! Tenetur ut ad debitis animi similique ea laborum at enim maiores error recusandae voluptatibus, alias fugit! Laudantium consequatur reprehenderit dolorum illum.
-      Ipsa, amet quibusdam? Ullam quasi vero facilis atque aperiam reprehenderit deleniti recusandae earum, unde nobis! Temporibus expedita ab laboriosam dolore eos, molestiae dolor? Earum dicta temporibus et, quae dolorem nihil!
-      Tempora, error! Hic unde qui cum ratione voluptate consequatur voluptatum. Facere corrupti iure esse eveniet excepturi quae minima perferendis cumque soluta! Voluptas mollitia aspernatur sapiente voluptatem libero error suscipit rerum.
-      Est, consequatur adipisci. Vero, velit nobis sapiente maxime quaerat perspiciatis dolorum unde modi facere, quis aut cumque quas? Reiciendis ea laudantium magni cumque natus perferendis provident hic reprehenderit, expedita voluptas?
-    </p>
+    <div class="content">
+      <p class="generated-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illum eveniet repellat, at necessitatibus, unde, totam quisquam non repudiandae quas distinctio. Sit architecto tenetur placeat! Commodi ad velit eaque. Maxime?
+        Perspiciatis fuga culpa, nemo doloribus sit sint necessitatibus ab! Tenetur ut ad debitis animi similique ea laborum at enim maiores error recusandae voluptatibus, alias fugit! Laudantium consequatur reprehenderit dolorum illum.
+        Ipsa, amet quibusdam? Ullam quasi vero facilis atque aperiam reprehenderit deleniti recusandae earum, unde nobis! Temporibus expedita ab laboriosam dolore eos, molestiae dolor? Earum dicta temporibus et, quae dolorem nihil!
+        Tempora, error! Hic unde qui cum ratione voluptate consequatur voluptatum. Facere corrupti iure esse eveniet excepturi quae minima perferendis cumque soluta! Voluptas mollitia aspernatur sapiente voluptatem libero error suscipit rerum.
+        Est, consequatur adipisci. Vero, velit nobis sapiente maxime quaerat perspiciatis dolorum unde modi facere, quis aut cumque quas? Reiciendis ea laudantium magni cumque natus perferendis provident hic reprehenderit, expedita voluptas?
+      </p>
+      <button id="copy-button">Copy <span><i class="fi-xnsuxl-copy-solid"></i></span></i></button>
+    </div>
   </div>
   <script src="./js/index.js"></script>
 </body>
