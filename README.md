@@ -1,11 +1,2 @@
-# Document
-
-Description
-
-## Desktop view
-
-![Desktop view](./img/desktop.jpg)
-
-## Mobile view
-
-![Mobile view](./img/mobile.jpg)
+# Lorem Ipsum Generator
+Lorem Ipsum generator for Words, Sentences and Paragraphs.
