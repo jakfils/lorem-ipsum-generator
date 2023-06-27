@@ -96,13 +96,24 @@ form select {
     color: var(--button-background-color);
 }
 
-.copy-message {
+.invisible {
+    display: none;
+}
+
+#copy-message {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
+    color: green;
+    font-size: 1.3rem;
 }
 
-.invisible {
-    display: none;
+
+@media screen and (max-width:300px) {
+    #copy-message {
+        left: 0;
+        transform: none;
+        padding-left: 10px;
+    }
 }
