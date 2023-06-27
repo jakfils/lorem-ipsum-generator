@@ -1,10 +1,92 @@
 :root {
-    --page-background-color:#f1f5f8;
-    --title-color :#063251;
-    --input-content-color:#757575;
-    --input-background-color:#ffffff;
-    --button-color:#063352;
-    --button-background-color:#063352;
-    --button-border-color:#005fcc;
-    --generated-text-color:#617e98;
+    --page-background-color: #f1f5f8;
+    --title-color: #063251;
+    --input-content-color: #757575;
+    --input-border-color: #757575;
+    --input-background-color: #ffffff;
+    --button-color: #063352;
+    --button-background-color: #4ea7e7;
+    --button-active-background-color:#4ea7e7ab;
+    --button-border-color: #005fcc;
+    --generated-text-color: #617e98;
+}
+
+/* Body */
+body {
+    background-color: var(--page-background-color);
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+/* Container */
+.container {
+    margin: 20px 3.5vw;
+}
+
+h1 {
+    font-size: clamp(1.125rem, 1.5vw + 1rem, 2.25rem);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 900;
+    color: var(--title-color);
+    padding-bottom: 2vw;
+}
+
+.description {
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 2vw;
+}
+form{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+form>* {
+    border-radius: 5px;
+    border: solid 2px var(--input-border-color);
+    margin-top: 10px;
+}
+
+#number {
+    width: 50px;
+    text-align: center;
+}
+
+
+input ,select {
+    height: 40px;
+}
+
+form label{
+    border: none;
+}
+form select {
+    margin: 0 7px;
+}
+#button{
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    border: solid 3px var(--button-border-color);
+    padding: 0 20px;
+}
+#button:active {
+    background-color: var(--button-active-background-color);
+}
+
+.content {
+    border: solid 1px var(--input-border-color);
+    border-radius: 5px;
+    padding: 50px 10px 10px 10px;
+    position: relative;
+}
+
+#copy-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    
 }
