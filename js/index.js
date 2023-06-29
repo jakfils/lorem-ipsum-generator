@@ -20,10 +20,6 @@ number.addEventListener("change", (e) => {
 });
 // Select input choise
 const choices = document.getElementById("choices");
-// choices.addEventListener("change",(e)=>{
-//   console.log(choices.value);
-
-// })
 
 //Select message displayed when copy
 const copyMessage = document.getElementById("copy-message");
@@ -64,8 +60,6 @@ const generateWords = (numberOfWords) => {
   return wordsArray.join(" ");
 };
 
-// console.log("********This a generated words\n\n" + generateWords(5));
-
 // Function : generate a sentence with numbers
 const generateSentence = (numberOfSentenceWords) => {
   // First word of sentence has to be a word
@@ -102,10 +96,6 @@ const generateSentence = (numberOfSentenceWords) => {
   return sentence.charAt(0).toUpperCase() + sentence.slice(1);
 };
 
-// console.log(
-//   "**************This is a sentence with 20 words \n" + generateSentence(20)
-// );
-
 // Function generate paragraph
 const generateParagraph = (
   sentenceMinWords,
@@ -122,10 +112,6 @@ const generateParagraph = (
   return sentencesArray.join(" ");
 };
 
-// console.log(
-//   "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
-// );
-
 // Function generate n paragraphs
 
 const generateParagraphs = (numberOfParagraphs) => {
@@ -141,10 +127,6 @@ const generateParagraphs = (numberOfParagraphs) => {
   return mappedGeneratedPargraph.join("");
 };
 
-// console.log(
-//   "**********************This 10 generated paragraphs \n\n" +
-//     generateParagraphs(10)
-// );
 /*********************************************************************************************/
 
 // Show copy message
@@ -156,7 +138,6 @@ copyBtn.addEventListener("click", (e) => {
 
 // Show Generated Words, Sentences or Pragraphs
 generateBtn.addEventListener("click", (e) => {
-  console.log("************************************");
   let fullGeneratedContent = "";
   switch (choices.value) {
     case "paragraphs":
@@ -164,7 +145,6 @@ generateBtn.addEventListener("click", (e) => {
         "<p>",
         `<p>${firstSentence} `
       );
-      console.log(fullGeneratedContent);
       break;
     case "sentences":
       fullGeneratedContent = `${firstSentence} ${generateParagraph(
@@ -172,11 +152,9 @@ generateBtn.addEventListener("click", (e) => {
         15,
         number.value - 1
       )}`;
-      console.log(fullGeneratedContent);
       break;
     case "words":
       fullGeneratedContent = generateWords(number.value);
-      console.log(fullGeneratedContent);
       break;
   }
 
