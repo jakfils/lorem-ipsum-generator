@@ -124,7 +124,7 @@ const generateParagraphs = (numberOfParagraphs) => {
   const mappedGeneratedPargraph = paragraphsArray.map((paragraph) => {
     return `<p>${paragraph}</p>`;
   });
-  return mappedGeneratedPargraph.join("");
+  return mappedGeneratedPargraph.join("\n");
 };
 
 /*********************************************************************************************/
