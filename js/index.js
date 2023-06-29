@@ -1,7 +1,19 @@
+// First sentence for pargraphs
+const firstSentence = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+
+// Array with only words (without special caracters : and ,)
+const words = caracters.slice(2);
+
+// Select copy btn
 const copyBtn = document.getElementById("copy-button");
+
+//Select message displayed when copy
 const copyMessage = document.getElementById("copy-message");
+
+// Select the content generated
 const generatedContent = document.querySelector(".generated-content");
 
+/*********************************************************************************************/
 // Function show message for n seconds
 function showMessage(messageElement, numberOfSeconds) {
   setTimeout((e) => {
@@ -13,28 +25,18 @@ function copyToClipboard() {
   let copyText = document.querySelector(".generated-content").textContent;
   navigator.clipboard.writeText(copyText);
 }
-// Show copy message
-copyBtn.addEventListener("click", (e) => {
-  copyMessage.classList.remove("invisible");
-  copyToClipboard();
-  showMessage(copyMessage, 2);
-});
 
-const firstSentence = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
-
-// Array with only words (without special caracters : and ,)
-const words = caracters.slice(2);
-
-/* Function get random int lower than max*/
+// Function get random int lower than max
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
 
-/* Function get random int betwen min and max*/
+// Function get random int betwen min and max
 const getRandomArbitrary = (min, max) => {
   return Math.random() * (max - min) + min;
 };
-/* Function generate n random words */
+
+// Function generate n random words
 const generateWords = (numberOfWords) => {
   let wordsArray = [];
   for (let n = 0; n < numberOfWords; n++) {
@@ -46,7 +48,7 @@ const generateWords = (numberOfWords) => {
 
 console.log("********This a generated words\n\n" + generateWords(5));
 
-/* Function : generate a sentence with numbers */
+// Function : generate a sentence with numbers
 const generateSentence = (numberOfSentenceWords) => {
   // First word of sentence has to be a word
   const firstWord = words[getRandomInt(words.length)];
@@ -87,7 +89,7 @@ console.log(
   "**************This is a sentence with 20 words \n" + generateSentence(20)
 );
 
-/* Function generate paragraph */
+// Function generate paragraph
 const generateParagraph = (
   sentenceMinWords,
   sentenceMaxWords,
@@ -112,7 +114,7 @@ console.log(
   "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
 );
 
-/*Function generate n paragraphs*/
+// Function generate n paragraphs
 
 const generateParagraphs = (numberOfParagraphs) => {
   let paragraphsArray = [];
@@ -128,3 +130,13 @@ console.log(
   "**********************This 10 generated paragraphs \n\n" +
     generateParagraphs(10)
 );
+/*********************************************************************************************/
+
+// Show copy message
+copyBtn.addEventListener("click", (e) => {
+  copyMessage.classList.remove("invisible");
+  copyToClipboard();
+  showMessage(copyMessage, 2);
+});
+
+
