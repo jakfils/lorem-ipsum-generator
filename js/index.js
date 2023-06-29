@@ -12,8 +12,6 @@ const generateBtn = document.getElementById("generateButton");
 
 // Select input number
 const number = document.getElementById("number");
-console.log(typeof number.value);
-
 // Avoid blanck in number input
 number.addEventListener("change", (e) => {
   if (e.target.value == "") {
@@ -63,10 +61,7 @@ const generateWords = (numberOfWords) => {
     let word = words[getRandomInt(words.length)];
     wordsArray.push(word);
   }
-  const mappedGeneratedWords = wordsArray.map((word) => {
-    return `<p>${word}</p>`;
-  });
-  return mappedGeneratedWords.join("");
+  return wordsArray.join(" ");
 };
 
 // console.log("********This a generated words\n\n" + generateWords(5));
@@ -165,11 +160,18 @@ generateBtn.addEventListener("click", (e) => {
   let fullGeneratedContent = "";
   switch (choices.value) {
     case "paragraphs":
-      fullGeneratedContent = generateParagraphs(number.value);
+      fullGeneratedContent = generateParagraphs(number.value).replace(
+        "<p>",
+        `<p>${firstSentence} `
+      );
       console.log(fullGeneratedContent);
       break;
     case "sentences":
-      fullGeneratedContent = generateParagraph(5, 15, number.value);
+      fullGeneratedContent = `${firstSentence} ${generateParagraph(
+        5,
+        15,
+        number.value - 1
+      )}`;
       console.log(fullGeneratedContent);
       break;
     case "words":
