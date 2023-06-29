@@ -7,6 +7,26 @@ const words = caracters.slice(2);
 // Select copy btn
 const copyBtn = document.getElementById("copy-button");
 
+// Select generate btn
+const generateBtn = document.getElementById("generateButton");
+
+// Select input number
+const number = document.getElementById("number");
+console.log(typeof number.value);
+
+// Avoid blanck in number input
+number.addEventListener("change", (e) => {
+  if (e.target.value == "") {
+    e.target.value = 1;
+  }
+});
+// Select input choise
+const choices = document.getElementById("choices");
+// choices.addEventListener("change",(e)=>{
+//   console.log(choices.value);
+
+// })
+
 //Select message displayed when copy
 const copyMessage = document.getElementById("copy-message");
 
@@ -43,10 +63,13 @@ const generateWords = (numberOfWords) => {
     let word = words[getRandomInt(words.length)];
     wordsArray.push(word);
   }
-  return wordsArray.join(" ");
+  const mappedGeneratedWords = wordsArray.map((word) => {
+    return `<p>${word}</p>`;
+  });
+  return mappedGeneratedWords.join("");
 };
 
-console.log("********This a generated words\n\n" + generateWords(5));
+// console.log("********This a generated words\n\n" + generateWords(5));
 
 // Function : generate a sentence with numbers
 const generateSentence = (numberOfSentenceWords) => {
@@ -83,11 +106,10 @@ const generateSentence = (numberOfSentenceWords) => {
   // Return sentence with first letter capitalized
   return sentence.charAt(0).toUpperCase() + sentence.slice(1);
 };
-// test generate a sentence
 
-console.log(
-  "**************This is a sentence with 20 words \n" + generateSentence(20)
-);
+// console.log(
+//   "**************This is a sentence with 20 words \n" + generateSentence(20)
+// );
 
 // Function generate paragraph
 const generateParagraph = (
@@ -104,15 +126,10 @@ const generateParagraph = (
   }
   return sentencesArray.join(" ");
 };
-console.log(
-  "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
-);
-console.log(
-  "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
-);
-console.log(
-  "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
-);
+
+// console.log(
+//   "*************This a generated paragraph \n\n" + generateParagraph(5, 15, 4)
+// );
 
 // Function generate n paragraphs
 
@@ -123,13 +140,16 @@ const generateParagraphs = (numberOfParagraphs) => {
     let generatedParagraph = generateParagraph(5, 15, getRandomArbitrary(2, 7));
     paragraphsArray.push(generatedParagraph);
   }
-  return paragraphsArray.join("\n\n");
+  const mappedGeneratedPargraph = paragraphsArray.map((paragraph) => {
+    return `<p>${paragraph}</p>`;
+  });
+  return mappedGeneratedPargraph.join("");
 };
 
-console.log(
-  "**********************This 10 generated paragraphs \n\n" +
-    generateParagraphs(10)
-);
+// console.log(
+//   "**********************This 10 generated paragraphs \n\n" +
+//     generateParagraphs(10)
+// );
 /*********************************************************************************************/
 
 // Show copy message
@@ -139,4 +159,24 @@ copyBtn.addEventListener("click", (e) => {
   showMessage(copyMessage, 2);
 });
 
+// Show Generated Words, Sentences or Pragraphs
+generateBtn.addEventListener("click", (e) => {
+  console.log("************************************");
+  let fullGeneratedContent = "";
+  switch (choices.value) {
+    case "paragraphs":
+      fullGeneratedContent = generateParagraphs(number.value);
+      console.log(fullGeneratedContent);
+      break;
+    case "sentences":
+      fullGeneratedContent = generateParagraph(5, 15, number.value);
+      console.log(fullGeneratedContent);
+      break;
+    case "words":
+      fullGeneratedContent = generateWords(number.value);
+      console.log(fullGeneratedContent);
+      break;
+  }
 
+  generatedContent.innerHTML = fullGeneratedContent;
+});

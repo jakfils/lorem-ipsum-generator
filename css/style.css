@@ -15,7 +15,7 @@
 body {
     background-color: var(--page-background-color);
     font-family: Roboto, Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* Container */
@@ -51,7 +51,7 @@ form>* {
 }
 
 #number {
-   width: 100px;
+    width: 100px;
     text-align: center;
 }
 
@@ -69,7 +69,7 @@ form select {
     margin: 0 7px;
 }
 
-#button {
+#generateButton {
     color: var(--button-color);
     background-color: var(--button-background-color);
     border: solid 3px var(--button-border-color);
@@ -85,6 +85,11 @@ form select {
     border-radius: 5px;
     padding: 50px 10px 10px 10px;
     position: relative;
+}
+
+.content p {
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 #copy-button {
